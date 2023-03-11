@@ -18,11 +18,14 @@ app.use(morgan("dev"));
 app.use("/api/recipes", recipesRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
+// app.use((_, res), () => {
+//   return res.send("Hello kitty");
+// });
 
 //404 error handling
 app.use((req, res) => {
   res.status(404).json({
-    message: "Not Found",
+    message: "Not Found 2",
   });
 });
 //Error handling
