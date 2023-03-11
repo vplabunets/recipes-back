@@ -16,13 +16,6 @@ async function main() {
     app.listen(PORT, () => {
       console.log(`server is listening on port ${PORT}`);
     });
-    app.get("/", (req, res) => {
-      res.send("Hey this is my API running 🥳");
-    });
-
-    app.get("/about", (req, res) => {
-      res.send("This is my about route..... ");
-    });
   } catch (error) {
     console.error("Main failed", error.message);
     process.exit(1);
