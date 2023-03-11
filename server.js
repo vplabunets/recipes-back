@@ -3,18 +3,17 @@ const mongoose = require("mongoose");
 
 const { string } = require("joi");
 
-const { string2 } = require("joi");
 const { app } = require("./app");
 mongoose.set("strictQuery", false);
 
 const { HOST_URI } = process.env;
-const PORT = "https://recipes-back.vercel.app/" || 3001;
+const PORT = process.env.PORT || 3001;
 console.log(process.env);
 async function main() {
   try {
     await mongoose.connect(HOST_URI);
     console.log("Connected to mongodb");
-    app.listen("https://recipes-back.vercel.app/", () => {
+    app.listen(PORT, () => {
       console.log(`server is listening on port ${PORT}`);
     });
   } catch (error) {
