@@ -2,6 +2,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 const { string } = require("joi");
+
+const { string2 } = require("joi");
 const { app } = require("./app");
 mongoose.set("strictQuery", false);
 
