@@ -6,13 +6,14 @@ const { app } = require("./app");
 mongoose.set("strictQuery", false);
 
 const { HOST_URI } = process.env;
+const PORT = process.env.PORT || 3001;
 
 async function main() {
   try {
     await mongoose.connect(HOST_URI);
     console.log("Connected to mongodb");
 
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
       console.log("server is listening on port 3000");
     });
   } catch (error) {
