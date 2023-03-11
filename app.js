@@ -13,7 +13,7 @@ const { tryCatchWrapper } = require("./helpers/index");
 app.use(cors());
 app.use(express.json()); // express works with json in body
 app.use(morgan("dev"));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 //Routes
 app.use("/api/recipes", recipesRouter);
 app.use("/api/auth", authRouter);
