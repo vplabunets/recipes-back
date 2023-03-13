@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
 // const { HOST_URI } = process.env;
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const DB = process.env.HOST_URI;
 // const Port = process.env.PORT;
@@ -13,9 +13,9 @@ const DB = process.env.HOST_URI;
 // const xxx =
 //   "mongodb+srv://admin:H8r7RG7jUWF6gfiO@recipes.gpibk5y.mongodb.net/recipesDB?retryWrites=true&w=majority";
 async function main() {
-  await console.log("HOST_URI in main before try", HOST_URI);
+  await console.log("HOST_URI in main before try", DB);
   try {
-    await console.log("HOST_URI in main in try", HOST_URI);
+    await console.log("HOST_URI in main in try", DB);
 
     await mongoose.connect(DB);
     console.log("Connected to mongodb");
