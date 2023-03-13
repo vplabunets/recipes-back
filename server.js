@@ -4,15 +4,13 @@ const { app } = require("./app");
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-const { HOST_URI } = process.env;
+const xxx= process.env.HOST_URI.toString();
 const PORT = process.env.PORT || 3000;
 
-async function main() {
-  await console.log("HOST_URI in main before try", HOST_URI);
   try {
     await console.log("HOST_URI in main in try", HOST_URI);
 
-    await mongoose.connect(HOST_URI);
+    await mongoose.connect(xxx);
     console.log("Connected to mongodb");
     await app.listen(PORT, () => {
       console.log(`server is listening on port ${PORT}`);
