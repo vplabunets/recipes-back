@@ -1,7 +1,6 @@
 const express = require("express");
 
 const { tryCatchWrapper } = require("../helpers/index");
-const { validateBody } = require("../middlewares/index");
 const { signUp, signIn } = require("../controllers/auth.controller");
 
 const authRouter = express.Router();

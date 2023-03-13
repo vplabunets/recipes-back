@@ -1,8 +1,4 @@
-const createError = require("http-errors");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const { User } = require("../models/user");
-const { JWT_SECRET } = process.env;
 
 async function createRecipe(req, res, next) {
   const { user } = req;

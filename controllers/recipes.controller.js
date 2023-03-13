@@ -1,5 +1,4 @@
 const createError = require("http-errors");
-const express = require("express");
 
 const { Recipe } = require("../models/recipe");
 
