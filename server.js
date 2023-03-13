@@ -2,12 +2,13 @@ const dotenv = require("dotenv");
 dotenv.config({ path: __dirname + "/.env" });
 const mongoose = require("mongoose");
 
-const { string } = require("joi");
-
 const { app } = require("./app");
 mongoose.set("strictQuery", false);
 
-const { HOST_URI } = process.env;
+// const { HOST_URI } = process.env;
+
+const HOST_URI =
+  "mongodb+srv://admin:H8r7RG7jUWF6gfiO@recipes.gpibk5y.mongodb.net/recipesDB?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 3000;
 
 async function main() {
