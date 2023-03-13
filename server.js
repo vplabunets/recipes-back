@@ -8,6 +8,7 @@ const { HOST_URI } = process.env;
 const PORT = process.env.PORT || 3000;
 
 async function main() {
+  console.log(HOST_URI);
   try {
     await mongoose.connect(HOST_URI);
     console.log("Connected to mongodb");
@@ -20,4 +21,4 @@ async function main() {
   }
 }
 
-main();
+await main();
