@@ -1,19 +1,17 @@
-const dotenv = require("dotenv");
-dotenv.config();
-const mongoose = require("mongoose");
+require("dotenv").config();
 
 const { app } = require("./app");
+const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
 const { HOST_URI } = process.env;
-
 const PORT = process.env.PORT || 3000;
 
 async function main() {
   try {
     await mongoose.connect(HOST_URI);
     console.log("Connected to mongodb");
-    app.listen(PORT, () => {
+    await app.listen(PORT, () => {
       console.log(`server is listening on port ${PORT}`);
     });
   } catch (error) {
